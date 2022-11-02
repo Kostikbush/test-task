@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css"/>
+    <title>Site Test</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Все мои объявления</h1>
+            <div class="wrapper-page">
+                <div class="container__nav-bar">
+                    <ul class="nav-bar__li">
+                        <li data-screen="one" id="li-navbar-one" class="nav-li active-li">Активные <span id="number-active"> </span></li>
+                        <li data-screen="two" id="li-navbar-two" class="nav-li">Архив <span id="number-archive"> </span></li>
+                        <li data-screen="three" id="li-navbar-three" class="nav-li">Черновики <span id="number-drafts"> </span></li>
+                    </ul>
+                </div>
+                <div class="container__carts screen-active">
+                    <div class="setting-header"> 
+                        <div class="publick-up">
+                            <input type="checkbox">
+                            <button class="btn-classick">Снять с публикации</button>
+                        </div>
+                        
+                        <div class="dropdown__wrapper">
+                            <div class="dropdown">
+                                <button id="btn-drop-one" class="btn-classick"><span>Все объявления</span><img class="arr-img" id="arr-drop-one" src="./img/arrow.svg"/></button>
+                                <dav id="drop__menu-one" class="drop__menu">
+                                    <ul class="list__drop-li">
+                                        <li class="btn-classick-li btn-classick">Not found :(</li>
+                                    </ul>
+                                </dav>
+                            </div>
+                            <div class="dropdown">
+                                <button id="btn-drop-two" class="btn-classick"><span>По дате публикации</span><img src="./img/arrow-long.svg"/><img class="arr-img" id="arr-drop-two" src="./img/arrow.svg"/></button>
+                                <dav id="drop__menu-two" class="drop__menu">
+                                    <ul class="list__drop-li">
+                                        <li id="dateUp" data-atri="dateUp" class="btn-classick-li btn-classick btn-classick-li1"><span>По дате публикации</span><img class="img" src="./img/arrow-long.svg"/></li>
+                                        <li id="dateDown" data-atri="dateDown" class="btn-classick-li btn-classick-li1"><span class="span">По дате публикации</span> <img class="down img" src="./img/arrow-long.svg"/></li>
+                                        <li id="coinUp" data-atri="coinUp" class="btn-classick-li btn-classick-li1"><span class="span">По цене <img class="img"  src="./img/arrow-long.svg"/></span> </li>
+                                        <li id="coinDown" data-atri="coinDown" class="btn-classick-li btn-classick-li1"><span class="span">По цене <img class="down img" src="./img/arrow-long.svg"/></span></li>
+                                    </ul>
+                                </dav>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="carts" class="carts">
+                        <div data-costup="50900" data-date="20" class="cart-container work-do">
+                            <div class="first-block">
+                                <div class="cart-img">
+                                    <div class="img-bg" width="230" height="170">
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                    </div>
+                                    <input type="checkbox">
+                                    <div class="slider__btn-slide">
+                                        <button class="btn-slide btn-active"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                    </div>
+                                    <div class="image-icon"> 
+                                    </div>
+                                    <div class="image-top">
+                                        <div class="img-top-item"></div>
+                                    </div>
+                                </div>
+                                <div class="content-blcok">
+                                    <h3 class="title-block">Сделать что-то</h3>
+                                    <span class="cost">50 900 ₽</span>
+                                    <span class="adress">Санкт-Петербург, ст. м. Маяковская</span>
+                                    <span class="day-ramain">Осталось 20 дней</span>
+                                    <span class="vie">Тип задания: одноэтапное</span>
+                                    <span class="typeof-publick">Тип публикации: горящее</span>
+                                </div>
+                            </div>
+                            <div class="second-block">
+                                <div class="vie-info">
+                                    <div class="vie-item"><div class="img-one img"></div><span class="vie-item__text">Отклики</span><span>4 </span><span class="text-color">+</span><span class="text-color">1</span></div>
+                                    <div class="vie-item"><div class="img-two img"></div><span>211</span>Просмотров</div>
+                                    <div class="vie-item"><div class="img-three img"></div><span>В избранном</span><span>0</span></div>
+                                    <div class="vie-item"><div class="img-fo img"></div><span>Подходят</span><span>0</span></div>
+                                    <div class="vie-item"></div>
+                                </div>
+                                <div class="controls">
+                                    <button><img alt="controls" src="./img/icon-controls/board-btns1.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns2.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns3.svg"/></button>
+                                    <button class="control-btn-menu" id="control-btn-menu">
+                                        <img alt="controls"src="./img/icon-controls/board-btns4.svg"/>
+                                        <dav id="drop__menu-last" class="drop__menu-last">
+                                            <ul class="list__drop-li-menu">
+                                                <li id="list1" data-atri="Передать" class="btn-classick-li list4">Передать</li>
+                                                <li id="list1" data-atri="Продлевать" class="btn-classick-li list4">Продлевать</li>
+                                                <li id="list1" data-atri="В архив" class="btn-classick-li list4">В архив</li>
+                                                <li id="list1" data-atri="Поделиться" class="btn-classick-li list4">Поделиться</li>
+                                            </ul>
+                                        </dav>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-costup="5000" data-date="19" class="cart-container buy">
+                            <div class="first-block">
+                                <div class="cart-img">
+                                    <div class="img-bg img-bg-buy" width="230" height="170">
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                    </div>
+                                    <input type="checkbox">
+                                    <div class="slider__btn-slide">
+                                        <button id="btn-slide-one-1" class="btn-slide btn-active"></button>
+                                        <button id="btn-slide-one-2" class="btn-slide"></button>
+                                        <button id="btn-slide-one-3" class="btn-slide"></button>
+                                        <button id="btn-slide-one-4" class="btn-slide"></button>
+                                        <button id="btn-slide-one-5" class="btn-slide"></button>
+                                    </div>
+                                    <div class="image-icon"> 
+                                    </div>
+                                    <div class="image-top">
+                                        <div class="img-top-item"></div>
+                                    </div>
+                                </div>
+                                <div class="content-blcok">
+                                    <h3 class="title-block">Куплю планшет Samsung</h3>
+                                    <span class="cost">5 000 ₽</span>
+                                    <span class="adress">Санкт-Петербург, ст. м. Маяковская</span>
+                                    <span class="day-ramain">Осталось 19 дней</span>
+                                    <span class="vie">Тип задания: одноэтапное</span>
+                                    <span class="typeof-publick">Тип публикации: горящее</span>
+                                </div>
+                            </div>
+                            <div class="second-block">
+                                <div class="vie-info">
+                                    <div class="vie-item"><div class="img-one img"></div><span class="vie-item__text">Предложений</span><span>3</span></div>
+                                    <div class="vie-item"><div class="img-two img"></div><span>211</span>Просмотров</div>
+                                    <div class="vie-item"><div class="img-three img"></div><span>В избранном</span><span>0</span></div>
+                                    <div class="vie-item"></div>
+                                </div>
+                                <div class="controls">
+                                    <button><img alt="controls" src="./img/icon-controls/board-btns1.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns2.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns3.svg"/></button>
+                                    <button class="control-btn-menu" id="control-btn-menu1">
+                                        <img alt="controls"src="./img/icon-controls/board-btns4.svg"/>
+                                        <dav id="drop__menu-last1" class="drop__menu-last">
+                                            <ul class="list__drop-li-menu">
+                                                <li id="list2" data-atri="Передать" class="btn-classick-li">Передать</li>
+                                                <li id="list2" data-atri="Продлевать" class="btn-classick-li">Продлевать</li>
+                                                <li id="list2" data-atri="В архив" class="btn-classick-li">В архив</li>
+                                                <li id="list2" data-atri="Поделиться" class="btn-classick-li">Поделиться</li>
+                                            </ul>
+                                        </dav>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-costup="5000" data-date="18" class="cart-container sell">
+                            <div class="first-block">
+                                <div class="cart-img">
+                                    <div class="img-bg img-bg-sell" width="230" height="170">
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                    </div>
+                                    <input type="checkbox">
+                                    <div class="slider__btn-slide">
+                                        <button id="btn-slide-two-1" class="btn-slide btn-active"></button>
+                                        <button id="btn-slide-two-2" class="btn-slide"></button>
+                                        <button id="btn-slide-two-3" class="btn-slide"></button>
+                                        <button id="btn-slide-two-4" class="btn-slide"></button>
+                                        <button id="btn-slide-two-5" class="btn-slide"></button>
+                                    </div>
+                                    <div class="image-icon"> 
+                                    </div>
+                                    <div class="image-top">
+                                        <div class="img-top-item"></div>
+                                    </div>
+                                </div>
+                                <div class="content-blcok">
+                                    <h3 class="title-block">Продам кроссовки</h3>
+                                    <span class="cost">5 000 ₽</span>
+                                    <span class="adress">Санкт-Петербург, ст. м. Маяковская</span>
+                                    <span class="day-ramain">Осталось 18 дней</span>
+                                    <span class="vie">Тип задания: одноэтапное</span>
+                                    <span class="typeof-publick">Тип публикации: поднятие в топ</span>
+                                </div>
+                            </div>
+                            <div class="second-block">
+                                <div class="vie-info">
+                                    <div class="vie-item"><div class="img-one img"></div><span class="vie-item__text">Предложений</span><span>3</span></div>
+                                    <div class="vie-item"><div class="img-two img"></div><span>211</span>Просмотров</div>
+                                    <div class="vie-item"><div class="img-three img"></div><span>В избранном</span><span>0</span></div>
+                                    <div class="vie-item"></div>
+                                </div>
+                                <div class="controls">
+                                    <button><img alt="controls" src="./img/icon-controls/board-btns1.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns2.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns3.svg"/></button>
+                                    <button class="control-btn-menu" id="control-btn-menu2">
+                                        <img alt="controls"src="./img/icon-controls/board-btns4.svg"/>
+                                        <dav id="drop__menu-last2" class="drop__menu-last">
+                                            <ul class="list__drop-li-menu">
+                                                <li id="list3" data-atri="Передать" class="btn-classick-li">Передать</li>
+                                                <li id="list3" data-atri="Продлевать" class="btn-classick-li">Продлевать</li>
+                                                <li id="list3" data-atri="В архив" class="btn-classick-li">В архив</li>
+                                                <li id="list3" data-atri="Поделиться" class="btn-classick-li">Поделиться</li>
+                                            </ul>
+                                        </dav>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-costup="50900" data-date="17" class="cart-container work">
+                            <div class="first-block">
+                                <div class="cart-img">
+                                    <div class="img-bg" width="230" height="170">
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                        <div class="img-bg-item"></div>
+                                    </div>
+                                    <div class="modarachin">На модерации</div>
+                                    <input type="checkbox">
+                                    <div class="slider__btn-slide">
+                                        <button class="btn-slide btn-active"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                        <button class="btn-slide"></button>
+                                    </div>
+                                    <div class="image-icon"> 
+                                    </div>
+                                    <div class="image-top">
+                                        <div class="img-top-item"></div>
+                                    </div>
+                                </div>
+                                <div class="content-blcok">
+                                    <h3 class="title-block">Художник</h3>
+                                    <span class="cost">50 900 ₽</span>
+                                    <div class="company"><img src="./logo.svg"/><div><span class="compani-text">ООО “АТ-ВОРК”</span><span class="adress">Санкт-Петербург, ст. м. Маяковская</span></div> </div>
+                                    <span class="day-ramain">Осталось 17 дней</span>
+                                    <span class="vie">Видимость: открытая</span>
+                                    <span class="typeof-publick">Тип публикации: бесплатно</span>
+                                </div>
+                            </div>
+                            <div class="second-block">
+                                <div class="vie-info">
+                                    <div class="vie-item"><div class="img-one img"></div><span class="vie-item__text">Отклики</span><span>3</span><span class="text-color">+</span><span class="text-color">1</span></div>
+                                    <div class="vie-item"><div class="img-two img"></div><span>Приглашены</span>3</div>
+                                    <div class="vie-item"><div class="img-two img"></div><span>268</span>Просмотров</div>
+                                    <div class="vie-item"><div class="img-fo img"></div><span>Подходят</span><span>16</span></div>
+                                    <div class="vie-item"></div>
+                                </div>
+                                <div class="controls">
+                                    <button><img alt="controls" src="./img/icon-controls/board-btns1.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns2.svg"/></button>
+                                    <button><img alt="controls"src="./img/icon-controls/board-btns3.svg"/></button>
+                                    <button class="control-btn-menu" id="control-btn-menu3">
+                                        <img alt="controls"src="./img/icon-controls/board-btns4.svg"/>
+                                        <dav id="drop__menu-last3" class="drop__menu-last">
+                                            <ul class="list__drop-li-menu">
+                                                <li id="list4" data-atri="Передать" class="btn-classick-li">Передать</li>
+                                                <li id="list4" data-atri="Продлевать" class="btn-classick-li">Продлевать</li>
+                                                <li id="list4" data-atri="В архив" class="btn-classick-li">В архив</li>
+                                                <li id="list4" data-atri="Поделиться" class="btn-classick-li">Поделиться</li>
+                                            </ul>
+                                        </dav>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="screen-two">
+                    Some content screen two
+                </div>
+
+
+                <div class="screen-three">
+                    Some content screen three
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
