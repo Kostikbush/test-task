@@ -1039,6 +1039,10 @@ button {
 .control-btn-menu {
     position: relative;
 }
+.control-btn-menu:hover {
+    background-color: #bababa;
+    border-radius: 10px;
+}
 
 .left0 {
     transition: all .3s linear;
