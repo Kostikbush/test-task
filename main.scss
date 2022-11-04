@@ -385,6 +385,9 @@ button {
             flex-direction: column;
             justify-content: space-between;
             height: 170px;
+            & button {
+                max-height: 36px;
+            }
             @media(max-width: 660px) {
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -1038,11 +1041,14 @@ button {
 
 .control-btn-menu {
     position: relative;
+    transition: all .3s linear;
 }
 .control-btn-menu:hover {
     background-color: #bababa;
     border-radius: 10px;
+    transition: all .3s linear;
 }
+
 
 .left0 {
     transition: all .3s linear;
@@ -1072,4 +1078,7 @@ button {
 }
 .screen-active {
     display: block;
+}
+.control-btn-menu{
+    max-height: 36px;
 }
