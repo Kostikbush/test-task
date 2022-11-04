@@ -103,7 +103,6 @@ function dateDownF(){
         for(let j=i; j < carts.children.length; j++){
             if(+carts.children[i].getAttribute('data-date')< +carts.children[j].getAttribute('data-date')){
                 replacedNode = carts.replaceChild(carts.children[j],carts.children[i]);
-                
                 insertAfter(replacedNode,carts.children[i])
             }
         }
@@ -133,7 +132,9 @@ function coinDownF (){
         }
     }
 }
-
+function insertAfter (elem, refElem) {
+    return refElem.parentNode.insertBefore(elem, refElem.nextSibling)
+}
 
 
 
@@ -181,8 +182,6 @@ btnsScreensThree.addEventListener('click', ()=> {
 
 
 // slider
-
-
 //  image container imgWrBuy and imgWrSell
 
 const containersSliders = document.querySelectorAll('#slider-have')
