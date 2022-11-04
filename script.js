@@ -5,21 +5,17 @@ const btnDropTwo = document.querySelector('#btn-drop-two');
 const dropDownTwoLis = document.querySelectorAll('.btn-classick-li1');
 
 //btn ... icon on cart
-const listDrop = document.querySelector('#drop__menu-last');
-const btnDropMenu = document.querySelector('#control-btn-menu').onclick = ()=> toggleDropMenu(listDrop);
-const listDrop1 = document.querySelector('#drop__menu-last1');
-const btnDropMenu1 = document.querySelector('#control-btn-menu1').onclick = ()=> toggleDropMenu(listDrop1);
-const listDrop2 = document.querySelector('#drop__menu-last2');
-const btnDropMenu2 = document.querySelector('#control-btn-menu2').onclick = ()=> toggleDropMenu(listDrop2);
-const listDrop3 = document.querySelector('#drop__menu-last3');
-const btnDropMenu3 = document.querySelector('#control-btn-menu3').onclick = ()=> toggleDropMenu(listDrop3);
+const controlBtnVenu = document.querySelectorAll('.control-btn-menu');
+controlBtnVenu.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        btn.children[1].classList.toggle('drop__menu-active')
+    })
+})
+//btn ... icon on cart
 
 
-// list of btn down menu btn ... icon on cart
-const list1 = document.querySelectorAll('#list1');
-const list2 = document.querySelectorAll('#list2');
-const list3 = document.querySelectorAll('#list3');
-const list4 = document.querySelectorAll('#list4');
+
+
 
 
 // btn filter
@@ -27,23 +23,6 @@ const dateUp = document.querySelector('#dateUp').onclick = dateUpF;
 const dateDown = document.querySelector('#dateDown').onclick = dateDownF;
 const coinUp = document.querySelector('#coinUp').onclick = coinUpF;
 const coinDown = document.querySelector('#coinDown').onclick = coinDownF;
-
-
-// btns of slider and image container imgWrBuy and imgWrSell
-const imgWrBuy = document.querySelector('.img-bg-buy');
-const btnsSlideOne1 = document.querySelectorAll('#btn-slide-one-1');
-const btnsSlideOne2 = document.querySelectorAll('#btn-slide-one-2');
-const btnsSlideOne3 = document.querySelectorAll('#btn-slide-one-3');
-const btnsSlideOne4 = document.querySelectorAll('#btn-slide-one-4');
-const btnsSlideOne5 = document.querySelectorAll('#btn-slide-one-5');
-
-const imgWrSell = document.querySelector('.img-bg-sell');
-const btnsSlideTwo1 = document.querySelectorAll('#btn-slide-two-1');
-const btnsSlideTwo2 = document.querySelectorAll('#btn-slide-two-2');
-const btnsSlideTwo3 = document.querySelectorAll('#btn-slide-two-3');
-const btnsSlideTwo4 = document.querySelectorAll('#btn-slide-two-4');
-const btnsSlideTwo5 = document.querySelectorAll('#btn-slide-two-5');
-
 
 
 function toggleDropMenu(menu){
@@ -71,9 +50,6 @@ dropDownTwoLis.forEach(li => {
     });
 })
 
-
-
-
 function innerFunc(text, li, list) {
     // dropdown of header 
     if(text === 'dateUp'){
@@ -90,46 +66,6 @@ function innerFunc(text, li, list) {
         btnDropTwo.innerHTML = `<span class="span">По цене</span> <img class="down img" src="./img/arrow-long.svg"/><img class="arr-img arr-up" id="arr-drop-two" src="./img/arrow.svg"/>`;
         togleClassLi(dropDownTwoLis, li)
     }
-
-    
-    // dropdown of carts 
-    if (text === 'Передать' && list === '1'){
-        togleClassLi(list1, li)
-    }else if (text === 'Продлевать' && list === '1'){
-        togleClassLi(list1, li)
-    }else if (text === 'В архив' && list === '1'){
-        togleClassLi(list1, li)
-    }else if (text === 'Поделиться' && list === '1'){
-        togleClassLi(list1, li)
-    }
-
-    else if (text === 'Передать' && list === '2'){
-        togleClassLi(list2, li)
-    }else if (text === 'Продлевать' && list === '2'){
-        togleClassLi(list2, li)
-    }else if (text === 'В архив' && list === '2'){
-        togleClassLi(list2, li)
-    }else if (text === 'Поделиться' && list === '2'){
-        togleClassLi(list2, li)
-    }
-    else if (text === 'Передать' && list === '3'){
-        togleClassLi(list3, li)
-    }else if (text === 'Продлевать' && list === '3'){
-        togleClassLi(list3, li)
-    }else if (text === 'В архив' && list === '3'){
-        togleClassLi(list3, li)
-    }else if (text === 'Поделиться' && list === '3'){
-        togleClassLi(list3, li)
-    }
-    else if (text === 'Передать' && list === '4'){
-        togleClassLi(list4, li)
-    }else if (text === 'Продлевать' && list === '4'){
-        togleClassLi(list4, li)
-    }else if (text === 'В архив' && list === '4'){
-        togleClassLi(list4, li)
-    }else if (text === 'Поделиться' && list === '4'){
-        togleClassLi(list4, li)
-    }
     function togleClassLi(List, li){
         List.forEach(li => {
             li.classList.remove("btn-classick")
@@ -144,60 +80,9 @@ function innerFunc(text, li, list) {
 
 
 
-// code of logic slider
-function changeActiveBtnSlide(btn, imgMove, btnsArr, activeSlide){
-    const arr = [0,1,2,3,4]
-    btn[0].classList.add('btn-active');
-    arr.map(numberOFSlide => {
-        if(numberOFSlide !== activeSlide){
-            imgMove.classList.remove(`left${numberOFSlide}`);
-        }else {
-            imgMove.classList.add(`left${numberOFSlide}`);
-        }
-        btnsArr.map(btn => {
-            btn[0].classList.remove('btn-active');
-        })
-    })
 
-}
-//slider One
-btnsSlideOne1[0].addEventListener('click', ()=>{
-    changeActiveBtnSlide(btnsSlideOne1,imgWrBuy,[btnsSlideOne2,btnsSlideOne3,btnsSlideOne4,btnsSlideOne5],0)
-})
 
-btnsSlideOne2[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideOne2,imgWrBuy,[btnsSlideOne1,btnsSlideOne3,btnsSlideOne4,btnsSlideOne5],1)
-})
-btnsSlideOne3[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideOne3,imgWrBuy,[btnsSlideOne1,btnsSlideOne2,btnsSlideOne4,btnsSlideOne5],2)
-})
-btnsSlideOne4[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideOne4,imgWrBuy,[btnsSlideOne1,btnsSlideOne2,btnsSlideOne3,btnsSlideOne5],3)
-})
-btnsSlideOne5[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideOne5,imgWrBuy,[btnsSlideOne1,btnsSlideOne2,btnsSlideOne3,btnsSlideOne4],4)
 
-})
-
-//slider Two
-btnsSlideTwo1[0].addEventListener('click', ()=>{
-    changeActiveBtnSlide(btnsSlideTwo1,imgWrSell,[btnsSlideTwo2,btnsSlideTwo3,btnsSlideTwo4,btnsSlideTwo5],0)
-})
-
-    
-btnsSlideTwo2[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideTwo2,imgWrSell,[btnsSlideTwo1,btnsSlideTwo3,btnsSlideTwo4,btnsSlideTwo5],1)
-})
-btnsSlideTwo3[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideTwo3,imgWrSell,[btnsSlideTwo1,btnsSlideTwo2,btnsSlideTwo4,btnsSlideTwo5],2)
-})
-btnsSlideTwo4[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideTwo4,imgWrSell,[btnsSlideTwo1,btnsSlideTwo2,btnsSlideTwo3,btnsSlideTwo5],3)
-})
-btnsSlideTwo5[0].addEventListener('click',()=> {
-    changeActiveBtnSlide(btnsSlideTwo5,imgWrSell,[btnsSlideTwo1,btnsSlideTwo2,btnsSlideTwo3,btnsSlideOne4],4)
-
-})
 
 
 // logic of filter
@@ -251,31 +136,7 @@ function coinDownF (){
 
 
 
-// inner elemnt delete on function dateUpF, dateDownF...
-function insertAfter(elem, refElment){
-    return refElment.parentNode.insertBefore(elem,refElment.nextSibling)
-}
 
-list1.forEach(li => {
-    li.addEventListener('click', ()=> {
-        innerFunc(li.dataset.atri, li, '1');
-    });
-})
-list2.forEach(li => {
-    li.addEventListener('click', ()=> {
-        innerFunc(li.dataset.atri, li, '2');
-    });
-})
-list3.forEach(li => {
-    li.addEventListener('click', ()=> {
-        innerFunc(li.dataset.atri, li, '3');
-    });
-})
-list4.forEach(li => {
-    li.addEventListener('click', ()=> {
-        innerFunc(li.dataset.atri, li, '4');
-    });
-})
 
 // screns 
 const screenOne = document.querySelector('.container__carts');
@@ -315,3 +176,83 @@ btnsScreensThree.addEventListener('click', ()=> {
     screenThree.classList.add('screen-active');
 })
 
+
+
+
+
+// slider
+
+
+//  image container imgWrBuy and imgWrSell
+
+const containersSliders = document.querySelectorAll('#slider-have')
+//console.log(containersSliders)
+containersSliders.forEach(containerSlider => {
+    const containerImages = containerSlider.children[0];
+    const containerBtns = containerSlider.children[2];
+    let count = containerImages.children.length;
+    let arrBtn = [];
+    let numberOfBtn = 0;
+    while(count > 0){
+        containerBtns.insertAdjacentHTML('afterbegin', `<button id="btn-slide-one-2" class="btn-slide"></button>`);
+        count--;
+    }
+    setTimeout(()=> {
+        const btns = containerBtns.children
+        btns[0].classList.add('btn-active');
+        containerBtns.addEventListener('click', e => {
+            for(let btn of btns) {
+                arrBtn.push(btn)
+                if(btn === e.target){
+                    btn.classList.add('btn-active');
+                    numberOfBtn = arrBtn.indexOf(btn);
+                    containerImages.style.left = -numberOfBtn*230 + 'px';
+                }else {
+                    btn.classList.remove('btn-active')
+                }
+                                
+            }
+            arrBtn = [];
+        })
+    })
+})
+
+
+// logic of btns carts menu
+
+const listDropMenu=document.querySelectorAll('.list__drop-li-menu')
+listDropMenu.forEach(lists => {
+    const lis = lists.children;
+    for(let i of lis){
+        lists.addEventListener('click', (e)=> {
+            if(e.target === i){
+                i.classList.add('btn-classick')
+            }else {
+                i.classList.remove('btn-classick')
+            }
+        })
+    }
+})
+
+
+
+
+
+// logic of input checkbox
+
+const checkboxs = document.querySelectorAll('#checkbox');
+const mainCheckbox = document.querySelector('#main');
+mainCheckbox.addEventListener('click', ()=> {
+    checkboxs.forEach(checkbox => {
+        if(mainCheckbox.checked){
+            checkbox.checked = 1;
+        }else{
+            checkbox.checked = 0;
+        }
+        checkbox.addEventListener('click',() => {
+            if(!checkbox.checked){
+                mainCheckbox.checked =0;
+            }
+        })
+    })
+})
