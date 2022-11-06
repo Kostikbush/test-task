@@ -249,8 +249,10 @@ listDropMenu.forEach(lists => {
 })
 
 function removeCartToArchive(element, childEl){
+    const btnArchive = document.querySelectorAll('#li-navbar-two')[0];
     const carts = document.querySelectorAll('#carts')[0];
     const archive = document.querySelector('#archive');
+    btnArchive.innerHTML = `Архив ${archive.children.length + 1}`
     setTimeout(()=> {
         childEl.innerHTML= 'В активные';
     },1000)
@@ -263,8 +265,10 @@ function removeCartToArchive(element, childEl){
     }
 }
 function addCartToActive(element, el) {
+    const btnArchive = document.querySelectorAll('#li-navbar-two')[0];
     const carts = document.querySelectorAll('#carts')[0];
     const archive = document.querySelector('#archive');
+    btnArchive.innerHTML = `Архив ${archive.children.length - 1}`
     setTimeout(()=>{
         el.innerHTML = 'В архив';
     },1000)
