@@ -232,14 +232,14 @@ listDropMenu.forEach(lists => {
                     setTimeout(()=> {
                         e.path[5].classList.remove('animationCart');
                         removeCartToArchive(e.path[5], i);
-                    }, 2000)
+                    }, 1500)
                 }
                 if(e.target.innerText === 'В активные'){
                     e.path[5].classList.add('animationCart')
                     setTimeout(()=> {
                         e.path[5].classList.remove('animationCart');
                         addCartToActive(e.path[5], i)
-                    }, 2000)
+                    }, 1500)
                 }
             }else {
                 i.classList.remove('btn-classick')
