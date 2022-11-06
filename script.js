@@ -7,9 +7,10 @@ const dropDownTwoLis = document.querySelectorAll('.btn-classick-li1');
 //btn ... icon on cart
 const controlBtnVenu = document.querySelectorAll('.control-btn-menu');
 controlBtnVenu.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        btn.children[1].classList.toggle('drop__menu-active')
+    btn.addEventListener('click', () => {
+        btn.nextElementSibling.classList.toggle('drop__menu-active');
     })
+    
 })
 //btn ... icon on cart
 
@@ -225,7 +226,21 @@ listDropMenu.forEach(lists => {
     for(let i of lis){
         lists.addEventListener('click', (e)=> {
             if(e.target === i){
-                i.classList.add('btn-classick')
+                i.classList.add('btn-classick');
+                if(e.target.innerText === 'В архив'){
+                    e.path[5].classList.add('animationCart')
+                    setTimeout(()=> {
+                        e.path[5].classList.remove('animationCart');
+                        removeCartToArchive(e.path[5], i);
+                    }, 2000)
+                }
+                if(e.target.innerText === 'В активные'){
+                    e.path[5].classList.add('animationCart')
+                    setTimeout(()=> {
+                        e.path[5].classList.remove('animationCart');
+                        addCartToActive(e.path[5], i)
+                    }, 2000)
+                }
             }else {
                 i.classList.remove('btn-classick')
             }
@@ -233,7 +248,34 @@ listDropMenu.forEach(lists => {
     }
 })
 
-
+function removeCartToArchive(element, childEl){
+    const carts = document.querySelectorAll('#carts')[0];
+    const archive = document.querySelector('#archive');
+    setTimeout(()=> {
+        childEl.innerHTML= 'В активные';
+    },1000)
+    
+    for(let i of carts.children){
+        if(i.id === element.id){
+            const newEl = carts.removeChild(i);
+            archive.appendChild(newEl)
+        }
+    }
+}
+function addCartToActive(element, el) {
+    const carts = document.querySelectorAll('#carts')[0];
+    const archive = document.querySelector('#archive');
+    setTimeout(()=>{
+        el.innerHTML = 'В архив';
+    },1000)
+    
+    for(let i of archive.children){
+        if(i.id === element.id){
+            const newEl = archive.removeChild(i);
+            carts.appendChild(newEl)
+        }
+    }
+}
 
 
 
