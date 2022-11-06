@@ -256,13 +256,8 @@ function removeCartToArchive(element, childEl){
     setTimeout(()=> {
         childEl.innerHTML= 'В активные';
     },1000)
-    
-    for(let i of carts.children){
-        if(i.id === element.id){
-            const newEl = carts.removeChild(i);
-            archive.appendChild(newEl)
-        }
-    }
+    const newEl = carts.removeChild(element);
+    archive.appendChild(newEl)
 }
 function addCartToActive(element, el) {
     const btnArchive = document.querySelectorAll('#li-navbar-two')[0];
@@ -272,13 +267,8 @@ function addCartToActive(element, el) {
     setTimeout(()=>{
         el.innerHTML = 'В архив';
     },1000)
-    
-    for(let i of archive.children){
-        if(i.id === element.id){
-            const newEl = archive.removeChild(i);
-            carts.appendChild(newEl)
-        }
-    }
+    const newEl = archive.removeChild(element);
+    carts.appendChild(newEl)
 }
 
 
